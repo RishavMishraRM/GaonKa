@@ -1,0 +1,72 @@
+{
+    "hero": {
+        "title": "GaonKa",
+        "subtitle": "Gaon Se Ghar Tak",
+        "quote": "“Real food. No preservatives. From villages you can trust.”"
+    },
+    "sections": {
+        "dailyUpdate": true,
+        "process": true,
+        "farmers": true,
+        "faq": true,
+        "press": true,
+        "antiMarketing": true,
+        "whoNotFor": true
+    },
+    "source": {
+        "text": "Sourced from villages near Siwan."
+    },
+    "story": {
+        "title": "Our Story",
+        "content": "Born from the fields of Bihar, GaonKa is a tribute to the honest, hardworking farmers who feed the nation. We bring you the produce exactly as it is prepared in our village kitchens."
+    },
+    "process": {
+        "title": "From Roots to Roof",
+        "subtitle": "The journey of purity."
+    },
+    "whoNotFor": {
+        "title": "Who GaonKa Is Not For",
+        "text": "GaonKa is not for people looking for long shelf life or bulk discounts."
+    },
+    "antiMarketing": {
+        "title": "What we don’t do:",
+        "p1": "No refining",
+        "p2": "No long shelf storage",
+        "p3": "No factory blending",
+        "p4": "No middlemen"
+    },
+    "farmers": {
+        "title": "Meet The Hands",
+        "text": "Real people. Real stories. The faces behind your food."
+    },
+    "footer": {
+        "text": "© 2026 GaonKa. All rights reserved."
+    },
+    "contact": {
+        "email": "hello@gaonka.in",
+        "phone": "+91 98765 43210"
+    },
+    "faqs": [
+        {
+            "q": "Why is stock limited?",
+            "a": "Because we sell only what comes from the current harvest and processing batch."
+        },
+        {
+            "q": "Why no COD?",
+            "a": "We pack after confirmation to avoid waste and unnecessary returns."
+        },
+        {
+            "q": "Why no discounts?",
+            "a": "Farm-sourced food has real costs. We price it honestly."
+        }
+    ],
+    "press": [
+        {
+            "id": "1",
+            "title": "GaonKa: The Village Story",
+            "source": "Village News",
+            "date": "Oct 2024",
+            "link": "#"
+        }
+    ]
+}

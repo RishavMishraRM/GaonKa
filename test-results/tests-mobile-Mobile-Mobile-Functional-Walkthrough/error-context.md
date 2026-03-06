@@ -1,0 +1,323 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "GaonKa" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - button "Toggle Menu" [active] [ref=e6]:
+          - img [ref=e7]
+      - generic [ref=e11]:
+        - button "Our Story" [ref=e12]
+        - button "Process" [ref=e13]
+        - button "Farmers" [ref=e14]
+        - link "Products" [ref=e15] [cursor=pointer]:
+          - /url: /products
+        - button "Order Now" [ref=e17]:
+          - img [ref=e18]
+          - generic [ref=e21]: Order Now
+    - generic [ref=e22] [cursor=pointer]:
+      - img "GaonKa Village Field" [ref=e24]
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - heading "GaonKa" [level=1] [ref=e28]
+          - paragraph [ref=e29]: Gaon Se Ghar Tak
+          - paragraph [ref=e31]: “Real food. No preservatives. From villages you can trust.”
+        - generic:
+          - generic: Tap or Scroll to Explore
+    - generic [ref=e34]:
+      - heading "Today from the Gaon" [level=3] [ref=e35]:
+        - img [ref=e36]
+        - generic [ref=e39]: Today from the Gaon
+      - list [ref=e40]:
+        - listitem [ref=e41]:
+          - generic [ref=e42]: Wheat harvested
+          - generic [ref=e43]: This week
+        - listitem [ref=e44]:
+          - generic [ref=e45]: Oil pressed
+          - generic [ref=e46]: Last 7 days
+        - listitem [ref=e47]:
+          - generic [ref=e48]: Packing status
+          - generic [ref=e53]: In progress
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: Authenticity
+        - heading "Our Story" [level=2] [ref=e59]
+        - paragraph [ref=e61]: Born from the fields of Bihar, GaonKa is a tribute to the honest, hardworking farmers who feed the nation. We bring you the produce exactly as it is prepared in our village kitchens.
+      - img "Village Scene" [ref=e66]
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - heading "From Roots to Roof" [level=2] [ref=e69]
+        - paragraph [ref=e70]: The journey of purity.
+      - generic [ref=e73]:
+        - generic [ref=e75]:
+          - img "1. The Gaon" [ref=e76]
+          - generic [ref=e78]:
+            - generic [ref=e79]: "1"
+            - generic [ref=e80]:
+              - generic [ref=e83]: Step 01
+              - heading "The Gaon" [level=3] [ref=e84]
+              - paragraph [ref=e85]: Sourced directly from organic soil.
+        - generic [ref=e87]:
+          - img "2. The Craft" [ref=e88]
+          - generic [ref=e90]:
+            - generic [ref=e91]: "2"
+            - generic [ref=e92]:
+              - generic [ref=e95]: Step 02
+              - heading "The Craft" [level=3] [ref=e96]
+              - paragraph [ref=e97]: Traditional processing. No machines.
+        - generic [ref=e99]:
+          - img "3. Small Batches" [ref=e100]
+          - generic [ref=e102]:
+            - generic [ref=e103]: "3"
+            - generic [ref=e104]:
+              - generic [ref=e107]: Step 03
+              - heading "Small Batches" [level=3] [ref=e108]
+              - paragraph [ref=e109]: Cleanly packed by hand.
+        - generic [ref=e111]:
+          - img "4. Your Ghar" [ref=e112]
+          - generic [ref=e114]:
+            - generic [ref=e115]: "4"
+            - generic [ref=e116]:
+              - generic [ref=e119]: Step 04
+              - heading "Your Ghar" [level=3] [ref=e120]
+              - paragraph [ref=e121]: Delivered fresh to your doorstep.
+    - generic [ref=e123]:
+      - generic [ref=e125]:
+        - heading "The Honest Journey." [level=3] [ref=e126]
+        - paragraph [ref=e127]: A transparent supply chain where every step adds value, not cost. From the soil of Siwan to the soul of your home.
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e131]:
+            - img [ref=e133]
+            - generic: "01"
+          - generic [ref=e142]:
+            - heading "Grown in Village Fields" [level=4] [ref=e143]
+            - paragraph [ref=e144]: Heritage seeds nurtured by generational farmers without chemicals.
+        - generic [ref=e145]:
+          - generic [ref=e147]:
+            - img [ref=e149]
+            - generic: "02"
+          - generic [ref=e153]:
+            - heading "Traditional Processing" [level=4] [ref=e154]
+            - paragraph [ref=e155]: Cold-pressed and stone-ground to retain 100% of natural nutrients.
+        - generic [ref=e156]:
+          - generic [ref=e158]:
+            - img [ref=e160]
+            - generic: "03"
+          - generic [ref=e165]:
+            - heading "Small Batch Packing" [level=4] [ref=e166]
+            - paragraph [ref=e167]: Hand-sealed inspections ensuring zero contamination.
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - img [ref=e171]
+            - generic: "04"
+          - generic [ref=e176]:
+            - heading "Direct to Home" [level=4] [ref=e177]
+            - paragraph [ref=e178]: From the village cluster straight to your kitchen table.
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - img [ref=e185]
+            - text: Join the Inner Circle
+          - heading "The GaonKa Circle." [level=2] [ref=e188]
+        - paragraph [ref=e190]: "\"Secure your harvest before it's even processed. Authenticity for the few.\""
+      - generic [ref=e191]:
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - img [ref=e195]
+            - heading "Priority Harvest" [level=3] [ref=e197]
+          - paragraph [ref=e198]: First access to limited batches like Raw Honey & Winter Ghee.
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - img [ref=e202]
+            - heading "Member Gifting" [level=3] [ref=e206]
+          - paragraph [ref=e207]: Curated, plastic-free gift sets available only to members.
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - img [ref=e211]
+            - heading "Direct Stream" [level=3] [ref=e213]
+          - paragraph [ref=e214]: Exclusive farm-to-phone updates from our village kitchens.
+      - button "Apply for Membership" [ref=e216]
+    - generic [ref=e218]:
+      - generic [ref=e219]:
+        - heading "Meet The Hands" [level=2] [ref=e220]
+        - paragraph [ref=e221]: Real people. Real stories. The faces behind your food.
+      - generic [ref=e223]:
+        - generic [ref=e225]:
+          - img "Ram Kaka" [ref=e226]
+          - generic [ref=e228]:
+            - paragraph [ref=e229]: The Guardian
+            - heading "Ram Kaka" [level=3] [ref=e230]
+            - paragraph [ref=e231]: Preserving 60-year-old seeds.
+        - generic [ref=e233]:
+          - img "Sunita Didi" [ref=e234]
+          - generic [ref=e236]:
+            - paragraph [ref=e237]: The Nurturer
+            - heading "Sunita Didi" [level=3] [ref=e238]
+            - paragraph [ref=e239]: Expert in natural pest control.
+        - generic [ref=e241]:
+          - img "Vikram" [ref=e242]
+          - generic [ref=e244]:
+            - paragraph [ref=e245]: The Innovator
+            - heading "Vikram" [level=3] [ref=e246]
+            - paragraph [ref=e247]: Bringing modern organic tech.
+      - generic [ref=e248]:
+        - generic [ref=e249]:
+          - paragraph [ref=e250]: “Is batch ka tel kal nikla.”
+          - paragraph [ref=e251]: — Ramesh, Farmer
+        - generic [ref=e252]:
+          - paragraph [ref=e253]: “Hum 3 din ke andar packing kar dete hain.”
+          - paragraph [ref=e254]: — Savita, Partner
+    - generic [ref=e256]:
+      - generic [ref=e257]:
+        - heading "Pantry Essentials" [level=2] [ref=e258]
+        - paragraph [ref=e259]: Stock up on honest food. Prices are real, just like the quality.
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - generic [ref=e263]:
+            - img "Kachi Ghani Mustard Oil" [ref=e264]
+            - generic [ref=e265]:
+              - generic [ref=e266]: Cold Pressed
+              - generic [ref=e267]: Almost Gone
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - heading "Kachi Ghani Mustard Oil" [level=3] [ref=e273]
+              - paragraph [ref=e274]: ₹180
+            - paragraph [ref=e275]: Traditional kachi ghani mustard oil. Pungent and pure.
+            - button "Order Now" [ref=e276] [cursor=pointer]:
+              - generic [ref=e277]: Order Now
+              - img [ref=e278]
+        - generic [ref=e281]:
+          - generic [ref=e282]:
+            - img "Groundnut Oil" [ref=e283]
+            - generic [ref=e284]:
+              - generic [ref=e285]: Cold Pressed
+              - generic [ref=e286]: Almost Gone
+          - generic [ref=e290]:
+            - generic [ref=e291]:
+              - heading "Groundnut Oil" [level=3] [ref=e292]
+              - paragraph [ref=e293]: ₹240
+            - paragraph [ref=e294]: Slow-pressed groundnuts from Siwan fields. Nutty aroma.
+            - button "Order Now" [ref=e295] [cursor=pointer]:
+              - generic [ref=e296]: Order Now
+              - img [ref=e297]
+        - generic [ref=e300]:
+          - generic [ref=e301]:
+            - img "Black Sesame Oil" [ref=e302]
+            - generic [ref=e303]:
+              - generic [ref=e304]: Cold Pressed
+              - generic [ref=e305]: Almost Gone
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - heading "Black Sesame Oil" [level=3] [ref=e311]
+              - paragraph [ref=e312]: ₹450
+            - paragraph [ref=e313]: Rich in antioxidants. Traditional wood-press extraction.
+            - button "Order Now" [ref=e314] [cursor=pointer]:
+              - generic [ref=e315]: Order Now
+              - img [ref=e316]
+      - link "Explore Full Catalog" [ref=e320] [cursor=pointer]:
+        - /url: /products
+        - generic [ref=e321]: Explore Full Catalog
+        - img [ref=e322]
+    - generic [ref=e326]:
+      - heading "Who GaonKa Is Not For" [level=3] [ref=e327]
+      - paragraph [ref=e328]: GaonKa is not for people looking for long shelf life or bulk discounts.
+    - generic [ref=e331]:
+      - generic [ref=e333]:
+        - generic [ref=e334]: Transparency
+        - heading "Common Curiosities." [level=3] [ref=e335]:
+          - text: Common
+          - text: Curiosities.
+        - paragraph [ref=e336]: We operate differently from standard grocery apps. Here is why we do what we do.
+      - generic [ref=e337]:
+        - generic [ref=e338]:
+          - heading "Why is stock limited?" [level=4] [ref=e339]
+          - paragraph [ref=e340]: Because we sell only what comes from the current harvest and processing batch.
+        - generic [ref=e341]:
+          - heading "Why no COD?" [level=4] [ref=e342]
+          - paragraph [ref=e343]: We pack after confirmation to avoid waste and unnecessary returns.
+        - generic [ref=e344]:
+          - heading "Why no discounts?" [level=4] [ref=e345]
+          - paragraph [ref=e346]: Farm-sourced food has real costs. We price it honestly.
+    - generic [ref=e348]:
+      - heading "What we don’t do:" [level=3] [ref=e349]
+      - list [ref=e350]:
+        - listitem [ref=e351]:
+          - generic [ref=e352]: ✕
+          - text: No refining
+        - listitem [ref=e353]:
+          - generic [ref=e354]: ✕
+          - text: No long shelf storage
+        - listitem [ref=e355]:
+          - generic [ref=e356]: ✕
+          - text: No factory blending
+        - listitem [ref=e357]:
+          - generic [ref=e358]: ✕
+          - text: No middlemen
+    - generic [ref=e359]:
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - link "GaonKa Gaon Se Ghar Tak" [ref=e364] [cursor=pointer]:
+            - /url: /
+            - heading "GaonKa" [level=2] [ref=e365]
+            - paragraph [ref=e366]: Gaon Se Ghar Tak
+          - paragraph [ref=e367]: Bringing the honest, unadulterated flavors of the village straight to your modern kitchen. No middlemen. No preservatives. Just food.
+          - generic [ref=e368]:
+            - link [ref=e369] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e370]
+            - link [ref=e373] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e374]
+            - link [ref=e376] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e377]
+        - generic [ref=e379]:
+          - heading "Collections" [level=3] [ref=e380]
+          - list [ref=e381]:
+            - listitem [ref=e382]:
+              - link "Village Pantry" [ref=e383] [cursor=pointer]:
+                - /url: /products
+                - text: Village Pantry
+            - listitem [ref=e385]:
+              - link "Our Process" [ref=e386] [cursor=pointer]:
+                - /url: /#process
+                - text: Our Process
+            - listitem [ref=e388]:
+              - link "The Farmers" [ref=e389] [cursor=pointer]:
+                - /url: /#farmers
+                - text: The Farmers
+            - listitem [ref=e391]:
+              - link "Circle Membership" [ref=e392] [cursor=pointer]:
+                - /url: /#circle
+                - text: Circle Membership
+        - generic [ref=e394]:
+          - heading "Join the Harvest" [level=3] [ref=e395]
+          - paragraph [ref=e396]: Be the first to know when a fresh batch arrives from the village.
+          - generic [ref=e397]:
+            - textbox "Email address" [ref=e398]
+            - button [ref=e399]:
+              - img [ref=e400]
+          - generic [ref=e402]:
+            - paragraph [ref=e403]: Direct Contact
+            - paragraph [ref=e404]: hello@gaonka.in
+            - paragraph [ref=e405]: +91 98765 43210
+      - generic [ref=e407]:
+        - paragraph [ref=e408]: © 2026 GaonKa. All rights reserved.
+        - paragraph [ref=e409]:
+          - text: Crafted with
+          - img [ref=e410]
+          - text: in Bihar & Delhi
+        - generic [ref=e412]:
+          - link "Privacy Policy" [ref=e413] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e414] [cursor=pointer]:
+            - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e420] [cursor=pointer]:
+    - img [ref=e421]
+  - alert [ref=e424]
+```

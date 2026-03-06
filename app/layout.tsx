@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Jost } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const bodoni = Bodoni_Moda({

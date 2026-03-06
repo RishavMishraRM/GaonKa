@@ -17,21 +17,22 @@ const jost = Jost({
 
 
 export const metadata: Metadata = {
-  title: "GaonKa – Real Farm-to-Home Food | No Preservatives",
-  description: "GaonKa delivers 100% natural, preservative-free food directly from Indian villages to your home. Cold-pressed oils, stone-ground atta, and more.",
-  keywords: ["farm to home", "organic food india", "cold pressed oil", "chakki atta", "village food", "gaonka", "natural groceries"],
-  authors: [{ name: "GaonKa Team" }],
+  metadataBase: new URL("https://gaonka.shop"),
+  title: "GaonKa | 100% Organic, Pure & Farm-Fresh Food Direct from Villages",
+  description: "Get 100% natural, organic, and preservative-free food delivered from Indian villages. GaonKa offers cold-pressed oils, stone-ground wood-pressed chakki atta, and pure organic groceries in Delhi, NCR, Mumbai, Bangalore, Pune, and all big cities across India.",
+  keywords: ["organic food india", "organic groceries online", "farm to home organic", "cold pressed oil pure", "stone ground atta organic", "gaonka", "buy organic food delhi mumbai pune ncr", "village food delivery", "no preservatives organic food"],
+  authors: [{ name: "GaonKa Farm & Village Team" }],
   openGraph: {
-    title: "GaonKa – Gaon Se Ghar Tak",
-    description: "Real food. No preservatives. From villages you can trust.",
-    url: "https://gaonka.com",
-    siteName: "GaonKa",
+    title: "GaonKa | Pure Organic Farm-Fresh Food - Gaon Se Ghar Tak",
+    description: "Shop 100% Organic, Chemical-free & Real food. No preservatives. From villages straight to your home across major cities.",
+    url: "https://gaonka.shop",
+    siteName: "GaonKa Organic Food Delivery",
     images: [
       {
         url: "/images/Image1_Hero_Main.png",
         width: 1200,
         height: 630,
-        alt: "GaonKa Village Fields",
+        alt: "GaonKa Organic Village Fields & Harvest",
       },
     ],
     locale: "en_IN",
@@ -39,12 +40,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GaonKa – Real Farm-to-Home Food",
-    description: "Honest food from Indian villages. No middlemen, no preservatives.",
+    title: "GaonKa | 100% Organic Farm-to-Home Food",
+    description: "Honest, pure organic food from Indian villages. Delivered across all major cities. No middlemen, absolutely zero preservatives.",
     images: ["/images/Image1_Hero_Main.png"],
   },
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  robots: "index, follow",
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
 export default function RootLayout({
@@ -63,8 +64,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "GaonKa",
-                "url": "https://gaonka.com",
-                "logo": "https://gaonka.com/images/logo.png",
+                "url": "https://gaonka.shop",
+                "logo": "https://gaonka.shop/images/logo.png",
                 "description": "Direct farm-to-home food delivery service in India. 100% Preservative Free.",
                 "areaServed": "IN",
                 "knowsAbout": ["Cold Pressed Oils", "Stone Ground Atta", "Organic Farming", "Village Economies"]
@@ -73,10 +74,10 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "GaonKa",
-                "url": "https://gaonka.com",
+                "url": "https://gaonka.shop",
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": "https://gaonka.com/products?q={search_term_string}",
+                  "target": "https://gaonka.shop/products?q={search_term_string}",
                   "query-input": "required name=search_term_string"
                 }
               }

@@ -9,24 +9,28 @@ const steps = [
         title: "1. The Gaon",
         desc: "Sourced directly from organic soil.",
         image: "/images/Image4_Process_Gaon.png",
+        alt: "Step 1 - Organic crops growing in Indian village fields without chemicals",
     },
     {
         id: 2,
         title: "2. The Craft",
         desc: "Traditional processing. No machines.",
         image: "/images/Image5_Process_Processing.png",
+        alt: "Step 2 - Traditional cold-pressing and stone-grinding in village",
     },
     {
         id: 3,
         title: "3. Small Batches",
         desc: "Cleanly packed by hand.",
         image: "/images/Image6_Process_Packing.png",
+        alt: "Step 3 - Hand-packed small batch organic food, chemical-free",
     },
     {
         id: 4,
         title: "4. Your Ghar",
         desc: "Delivered fresh to your doorstep.",
         image: "/images/Image7_Process_Ghar.png",
+        alt: "Step 4 - Fresh organic food delivery to your home from village",
     },
 ];
 
@@ -65,7 +69,7 @@ export default function Process({ content }: { content?: ProcessContent }) {
                             <div className="relative aspect-[3/5] md:aspect-[3/4] lg:aspect-[3/5] w-full rounded-[2rem] overflow-hidden mb-6 shadow-2xl border border-primary/5 hover:border-cta/20 transition-all duration-500">
                                 <Image
                                     src={step.image}
-                                    alt={step.title}
+                                    alt={step.alt}
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] grayscale-[30%] group-hover:grayscale-0"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

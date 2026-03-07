@@ -6,15 +6,29 @@ import { getSiteContent } from "@/lib/db";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Press & Media - GaonKa Story",
-    description: "Read about GaonKa's journey, founder's note, and media coverage. Authenticity from village to home.",
+    title: "Press & Media Coverage - Our Story from Village to Home",
+    description: "Read about GaonKa's journey from Bihar villages to homes across India. Founder's note, media coverage, and our mission to deliver 100% organic, preservative-free food. For journalists, creators, and honest eaters.",
+    keywords: ["gaonka story", "organic food company india", "farm to home startup", "bihar organic farming", "village food delivery press"],
+    alternates: {
+        canonical: "https://gaonka.shop/press",
+    },
 };
 
 export default async function Press() {
     const content = await getSiteContent();
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gaonka.shop" },
+            { "@type": "ListItem", "position": 2, "name": "Press & Media", "item": "https://gaonka.shop/press" },
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-background text-foreground font-sans">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             <Navbar />
 
             <section className="pt-32 pb-20 px-6">

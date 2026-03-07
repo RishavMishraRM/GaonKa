@@ -1,10 +1,36 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Phone, Building, Send } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Corporate Gifting & Bulk Orders - Organic Village Food",
+    description: "GaonKa B2B: Premium organic corporate gifting and bulk orders. Plastic-free, preservative-free food hampers sourced directly from Indian villages. Perfect for Diwali gifts, employee wellness programs, and client appreciation.",
+    keywords: ["organic corporate gifting", "bulk organic food orders", "diwali gift hampers organic", "corporate food hampers india", "village food wholesale"],
+    alternates: {
+        canonical: "https://gaonka.shop/b2b",
+    },
+    openGraph: {
+        title: "GaonKa B2B - Corporate Organic Gifting from Indian Villages",
+        description: "Elevate corporate gifting with 100% organic, plastic-free food hampers. Direct from village to boardroom.",
+        url: "https://gaonka.shop/b2b",
+        type: "website",
+    },
+};
 
 export default function B2BPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gaonka.shop" },
+            { "@type": "ListItem", "position": 2, "name": "Corporate & B2B", "item": "https://gaonka.shop/b2b" },
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-background text-foreground font-sans">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
             <section className="pt-40 pb-24 px-6">

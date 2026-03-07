@@ -40,7 +40,7 @@ export default function Hero({ content }: { content: HeroContent }) {
             <motion.div style={{ y }} className="absolute inset-0 z-0">
                 <Image
                     src="/images/Image1_Hero_Main.png"
-                    alt="GaonKa Village Field"
+                    alt="GaonKa - Organic Village Fields, Pure Farm-Fresh Food from Indian Gaon"
                     fill
                     priority
                     className="object-cover transition-transform duration-[2s] hover:scale-105"

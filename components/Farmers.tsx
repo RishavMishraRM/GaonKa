@@ -9,18 +9,21 @@ const farmers = [
         role: "The Guardian",
         desc: "Preserving 60-year-old seeds.",
         image: "/images/Image8_Farmer_Elder.png",
+        alt: "Ram Kaka - Elder Indian Organic Farmer Preserving Heritage Seeds in Bihar Village",
     },
     {
         name: "Sunita Didi",
         role: "The Nurturer",
         desc: "Expert in natural pest control.",
         image: "/images/Image11_Farmer_Woman.png",
+        alt: "Sunita Didi - Woman Farmer Expert in Natural Organic Pest Control Methods",
     },
     {
         name: "Vikram",
         role: "The Innovator",
         desc: "Bringing modern organic tech.",
         image: "/images/Image9_Farmer_Young.png",
+        alt: "Vikram - Young Indian Farmer Innovating Organic Agriculture Technology",
     },
 ];
 
@@ -60,7 +63,7 @@ export default function Farmers({ content }: { content?: FarmersContent }) {
                             <div className="relative group overflow-hidden rounded-[3rem] h-[550px] shadow-2xl border border-primary/5">
                                 <Image
                                     src={farmer.image}
-                                    alt={farmer.name}
+                                    alt={farmer.alt}
                                     fill
                                     className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
                                     sizes="(max-width: 768px) 90vw, 33vw"

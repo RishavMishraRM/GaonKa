@@ -40,11 +40,13 @@ export default function Story({ content }: { content: StoryContent }) {
                         <div className="absolute -top-20 -right-20 w-64 h-64 bg-cta/5 rounded-full blur-3xl" />
 
                         <div className="relative border-[1px] border-primary/10 p-4 rounded-[4rem] liquid-glass">
-                            <div className="rounded-[3rem] overflow-hidden shadow-2xl">
-                                <img
+                            <div className="rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[4/3]">
+                                <Image
                                     src="/images/Image3_Story.png"
-                                    alt="Village Scene"
-                                    className="w-full grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+                                    alt="GaonKa Our Story - Authentic Village Kitchen and Organic Farming in Bihar"
+                                    fill
+                                    className="object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
                         </div>

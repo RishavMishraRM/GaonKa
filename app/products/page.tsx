@@ -7,15 +7,26 @@ import { getSiteContent } from "@/lib/db";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "100% Organic Products | Cold Pressed Oils & Stone Ground Atta - GaonKa",
+    title: "100% Organic Products | Cold Pressed Oils & Stone Ground Atta",
     description: "Browse GaonKa's complete range of farm-fresh, preservative-free village products. Shop 100% pure organic cold-pressed mustard oil, hand-pounded spices, and stone-ground chakki atta delivered to your door.",
-    keywords: ["buy organic products online", "cold pressed mustard oil", "stone ground chakki atta", "natural village food", "organic spices online", "preservative free food india"],
+    keywords: ["buy organic products online", "cold pressed mustard oil", "stone ground chakki atta", "natural village food", "organic spices online", "preservative free food india", "organic cooking oil", "desi ghee online"],
+    alternates: {
+        canonical: "https://gaonka.shop/products",
+    },
 };
 
 export default async function ProductsPage() {
     const products = await getProducts();
     const content = await getSiteContent();
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gaonka.shop" },
+            { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://gaonka.shop/products" },
+        ]
+    };
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -28,7 +39,7 @@ export default async function ProductsPage() {
                 "@type": "Product",
                 "name": product.name,
                 "description": product.desc,
-                "image": `https://gaonka.shop${product.image}`, // Updated Domain
+                "image": `https://gaonka.shop${product.image}`,
                 "brand": {
                     "@type": "Brand",
                     "name": "GaonKa"
@@ -46,6 +57,10 @@ export default async function ProductsPage() {
 
     return (
         <main className="min-h-screen bg-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

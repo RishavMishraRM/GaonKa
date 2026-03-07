@@ -30,15 +30,15 @@ export default function Products({ products, sourceText }: { products: Product[]
     };
 
     return (
-        <section id="products" className="py-32 bg-background relative overflow-hidden">
+        <section id="products" className="py-16 md:py-32 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20 animate-on-scroll">
-                    <h2 className="text-4xl md:text-7xl font-serif font-black text-primary mb-4 tracking-tighter">Pantry Essentials</h2>
+                    <h2 className="text-3xl md:text-7xl font-serif font-black text-primary mb-4 tracking-tighter">Pantry Essentials</h2>
                     <p className="text-lg text-secondary/70 max-w-xl mx-auto font-sans tracking-wide uppercase text-xs">Stock up on honest food. Prices are real, just like the quality.</p>
                     <div className="h-[2px] w-20 bg-cta mx-auto mt-6" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {displayProducts.map((product, idx) => {
                         const isHighDemand = (product.stockLeft || 0) < 10;
                         const stockProgress = Math.max(5, Math.min(100, ((product.stockLeft || 0) / 20) * 100)); // Assuming 20 is "full" for display

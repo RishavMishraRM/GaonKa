@@ -9,12 +9,12 @@ export default function Footer({ text }: { text: string }) {
             {/* Decorative background texture elements */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cta to-transparent opacity-20" />
 
-            <div className="container mx-auto px-6 py-24 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24">
+            <div className="container mx-auto px-6 py-14 md:py-24 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-24">
                     {/* Brand Section */}
                     <div className="md:col-span-5 space-y-8">
                         <Link href="/" className="inline-block group">
-                            <h2 className="text-5xl font-serif font-black tracking-tighter text-white group-hover:text-cta transition-colors duration-500">
+                            <h2 className="text-4xl md:text-5xl font-serif font-black tracking-tighter text-white group-hover:text-cta transition-colors duration-500">
                                 GaonKa
                             </h2>
                             <p className="text-[10px] uppercase tracking-[0.5em] text-cta mt-2 group-hover:tracking-[0.6em] transition-all duration-500 font-bold">

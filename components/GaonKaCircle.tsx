@@ -5,7 +5,7 @@ import { Sparkles, Zap, Gift, Smartphone } from "lucide-react";
 
 export default function GaonKaCircle() {
     return (
-        <section className="py-20 bg-primary text-white overflow-hidden relative border-t border-white/5">
+        <section className="py-14 md:py-20 bg-primary text-white overflow-hidden relative border-t border-white/5">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     {/* Header Compact Row */}
@@ -19,7 +19,7 @@ export default function GaonKaCircle() {
                                 <Sparkles size={12} />
                                 Join the Inner Circle
                             </motion.div>
-                            <h2 className="text-4xl md:text-5xl font-serif font-black tracking-tighter leading-none">
+                            <h2 className="text-3xl md:text-5xl font-serif font-black tracking-tighter leading-none">
                                 The GaonKa <span className="text-cta">Circle.</span>
                             </h2>
                         </div>

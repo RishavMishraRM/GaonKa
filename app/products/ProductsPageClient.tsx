@@ -28,7 +28,7 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
     return (
         <section className="min-h-screen bg-[#FDFCFB] text-primary selection:bg-cta selection:text-white">
             {/* Immersive Header */}
-            <div className="pt-40 pb-20 px-6 md:px-12 lg:px-24 border-b border-primary/5 relative overflow-hidden">
+            <div className="pt-28 md:pt-40 pb-12 md:pb-20 px-4 md:px-12 lg:px-24 border-b border-primary/5 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cta/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 <div className="max-w-[1800px] mx-auto relative z-10">
@@ -46,12 +46,12 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                             <motion.h1
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                className="text-7xl md:text-9xl font-serif font-black text-primary tracking-tighter italic leading-[0.85] mb-6"
+                                className="text-5xl md:text-9xl font-serif font-black text-primary tracking-tighter italic leading-[0.85] mb-4 md:mb-6"
                             >
                                 Village <br />
                                 <span className="text-cta">Pantry.</span>
                             </motion.h1>
-                            <p className="text-xl md:text-2xl text-secondary/60 font-serif italic max-w-xl leading-relaxed">
+                            <p className="text-lg md:text-2xl text-secondary/60 font-serif italic max-w-xl leading-relaxed">
                                 Honest harvests from the heart of the village. <br />
                                 <span className="text-cta/80 not-italic text-sm font-bold uppercase tracking-widest mt-2 block">100% Traceable • Chemical Free</span>
                             </p>
@@ -90,7 +90,7 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
 
                     {/* Sticky Sidebar Filters */}
                     <div className="lg:w-80 lg:shrink-0 lg:border-r border-primary/5">
-                        <div className="lg:sticky lg:top-8 p-6 md:p-12 overflow-x-auto lg:overflow-visible">
+                        <div className="lg:sticky lg:top-8 p-4 md:p-12 overflow-x-auto lg:overflow-visible">
                             <span className="hidden lg:block text-[9px] font-black uppercase tracking-[0.4em] text-primary/30 mb-8">
                                 Curated Aisles
                             </span>
@@ -120,10 +120,10 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                     </div>
 
                     {/* Expansive Product Grid */}
-                    <div className="flex-1 p-6 md:p-12 lg:p-20 bg-[#FDFCFB]">
+                    <div className="flex-1 p-4 md:p-12 lg:p-20 bg-[#FDFCFB]">
                         <motion.div
                             layout
-                            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-20"
+                            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-20"
                         >
                             <AnimatePresence mode="popLayout">
                                 {filteredProducts.map((product, idx) => {

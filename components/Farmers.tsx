@@ -36,7 +36,7 @@ export default function Farmers({ content }: { content?: FarmersContent }) {
     if (!content) return null;
 
     return (
-        <section id="farmers" className="py-32 bg-background relative overflow-hidden">
+        <section id="farmers" className="py-16 md:py-32 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -44,7 +44,7 @@ export default function Farmers({ content }: { content?: FarmersContent }) {
                     transition={{ duration: 1 }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-5xl md:text-7xl font-serif font-black text-primary mb-6">{content.title}</h2>
+                    <h2 className="text-3xl md:text-7xl font-serif font-black text-primary mb-4 md:mb-6">{content.title}</h2>
                     <p className="max-w-xl mx-auto text-secondary/70 font-sans tracking-wide uppercase text-xs">
                         {content.text}
                     </p>
@@ -60,7 +60,7 @@ export default function Farmers({ content }: { content?: FarmersContent }) {
                             transition={{ delay: idx * 0.2, duration: 0.8 }}
                             className="min-w-[85vw] md:min-w-0 snap-center hover-lift"
                         >
-                            <div className="relative group overflow-hidden rounded-[3rem] h-[550px] shadow-2xl border border-primary/5">
+                            <div className="relative group overflow-hidden rounded-[3rem] h-[420px] md:h-[550px] shadow-2xl border border-primary/5">
                                 <Image
                                     src={farmer.image}
                                     alt={farmer.alt}
@@ -81,12 +81,12 @@ export default function Farmers({ content }: { content?: FarmersContent }) {
                     ))}
                 </div>
 
-                <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
                     {[
-                        { quote: "“Is batch ka tel kal nikla.”", author: "Ramesh, Farmer", color: "border-cta" },
-                        { quote: "“Hum 3 din ke andar packing kar dete hain.”", author: "Savita, Partner", color: "border-primary" }
+                        { quote: "\u201cIs batch ka tel kal nikla.\u201d", author: "Ramesh, Farmer", color: "border-cta" },
+                        { quote: "\u201cHum 3 din ke andar packing kar dete hain.\u201d", author: "Savita, Partner", color: "border-primary" }
                     ].map((q, i) => (
-                        <div key={i} className={`bg-white p-10 rounded-[2.5rem] border-l-4 ${q.color} shadow-xl shadow-primary/5 liquid-glass`}>
+                        <div key={i} className={`bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-l-4 ${q.color} shadow-xl shadow-primary/5 liquid-glass`}>
                             <p className="text-2xl italic text-primary font-serif font-bold mb-6">
                                 {q.quote}
                             </p>

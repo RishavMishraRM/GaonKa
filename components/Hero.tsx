@@ -57,16 +57,16 @@ export default function Hero({ content }: { content: HeroContent }) {
                     initial={{ opacity: 0, y: 100, scale: 0.9 }}
                     animate={isRevealed ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 100, scale: 0.9 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-4xl liquid-glass p-12 md:p-20 rounded-[4rem] border-white/30 backdrop-blur-md shadow-2xl"
+                    className="max-w-4xl liquid-glass p-8 md:p-20 rounded-[2rem] md:rounded-[4rem] border-white/30 backdrop-blur-md shadow-2xl"
                 >
-                    <h1 className="text-5xl md:text-9xl font-serif font-bold text-primary mb-6 tracking-tighter">
+                    <h1 className="text-4xl md:text-9xl font-serif font-bold text-primary mb-4 md:mb-6 tracking-tighter">
                         {content.title}
                     </h1>
-                    <p className="text-xl md:text-3xl text-secondary font-sans font-light tracking-[0.2em] uppercase mb-10">
+                    <p className="text-sm md:text-3xl text-secondary font-sans font-light tracking-[0.1em] md:tracking-[0.2em] uppercase mb-6 md:mb-10">
                         {content.subtitle}
                     </p>
-                    <div className="h-[1px] w-32 bg-cta mx-auto mb-10 opacity-60" />
-                    <p className="text-xl md:text-2xl text-primary/80 max-w-2xl mx-auto leading-relaxed font-serif italic">
+                    <div className="h-[1px] w-20 md:w-32 bg-cta mx-auto mb-6 md:mb-10 opacity-60" />
+                    <p className="text-base md:text-2xl text-primary/80 max-w-2xl mx-auto leading-relaxed font-serif italic">
                         {content.quote}
                     </p>
                 </motion.div>

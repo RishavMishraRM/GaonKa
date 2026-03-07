@@ -43,9 +43,9 @@ export default function Process({ content }: { content?: ProcessContent }) {
     if (!content) return null;
 
     return (
-        <section id="process" className="py-32 bg-background overflow-hidden relative">
-            <div className="container mx-auto px-6 mb-20 text-center">
-                <h2 className="text-5xl md:text-7xl font-serif font-black text-primary mb-6">
+        <section id="process" className="py-16 md:py-32 bg-background overflow-hidden relative">
+            <div className="container mx-auto px-6 mb-12 md:mb-20 text-center">
+                <h2 className="text-3xl md:text-7xl font-serif font-black text-primary mb-4 md:mb-6">
                     {content.title}
                 </h2>
                 <p className="text-lg text-secondary/70 font-sans tracking-[0.2em] uppercase text-xs">

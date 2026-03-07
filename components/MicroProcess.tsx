@@ -40,9 +40,9 @@ export default function MicroProcess() {
 
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 {/* Header Narrative */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-8">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-24 border-b border-primary/5 pb-6 md:pb-8">
                     <div>
-                        <h3 className="text-4xl md:text-5xl font-serif font-black text-primary mb-4 italic">
+                        <h3 className="text-3xl md:text-5xl font-serif font-black text-primary mb-3 md:mb-4 italic">
                             The Honest <span className="text-cta">Journey.</span>
                         </h3>
                         <p className="text-secondary/60 max-w-md font-sans text-sm leading-relaxed">

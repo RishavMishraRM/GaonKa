@@ -33,15 +33,15 @@ export default function B2BPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <Navbar />
 
-            <section className="pt-40 pb-24 px-6">
+            <section className="pt-28 md:pt-40 pb-16 md:pb-24 px-4 md:px-6">
                 <div className="container mx-auto max-w-6xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div>
-                            <h1 className="text-6xl md:text-8xl font-serif font-black tracking-tighter leading-none mb-10">
+                            <h1 className="text-4xl md:text-8xl font-serif font-black tracking-tighter leading-none mb-6 md:mb-10">
                                 Village Integrity, <br />
                                 <span className="text-cta">Corporate Scales.</span>
                             </h1>
-                            <p className="text-xl md:text-2xl text-secondary/70 font-serif italic mb-12 max-w-xl">
+                            <p className="text-lg md:text-2xl text-secondary/70 font-serif italic mb-8 md:mb-12 max-w-xl">
                                 GaonKa Gifting: Plastic-free, preservative-free, and directly sourced from Indian villages. Elevate your corporate gifting with food that has a soul.
                             </p>
 
@@ -67,7 +67,7 @@ export default function B2BPage() {
                             </div>
                         </div>
 
-                        <div className="p-10 bg-white border border-primary/10 rounded-sharp shadow-2xl relative">
+                        <div className="p-6 md:p-10 bg-white border border-primary/10 rounded-sharp shadow-2xl relative">
                             <div className="absolute inset-0 bg-primary/[0.02] pointer-events-none" />
                             <h2 className="text-3xl font-serif font-bold mb-8">Corporate Inquiry</h2>
                             <form className="space-y-6 relative z-10">

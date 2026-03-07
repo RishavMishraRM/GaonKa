@@ -31,7 +31,7 @@ export default async function Press() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             <Navbar />
 
-            <section className="pt-32 pb-20 px-6">
+            <section className="pt-24 md:pt-32 pb-16 md:pb-20 px-4 md:px-6">
                 <div className="max-w-2xl mx-auto">
                     {/* Header */}
                     <h1 className="text-3xl md:text-4xl font-bold text-brown-700 mb-2 italic tracking-tight">

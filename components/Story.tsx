@@ -10,17 +10,17 @@ interface StoryContent {
 
 export default function Story({ content }: { content: StoryContent }) {
     return (
-        <section id="story" className="py-24 bg-white relative overflow-hidden">
+        <section id="story" className="py-16 md:py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-cta font-bold uppercase tracking-[0.3em] text-xs mb-6 block">Authenticity</span>
-                        <h2 className="text-4xl md:text-7xl font-serif font-black text-primary mb-10 tracking-tighter">
+                        <span className="text-cta font-bold uppercase tracking-[0.3em] text-xs mb-4 md:mb-6 block">Authenticity</span>
+                        <h2 className="text-3xl md:text-7xl font-serif font-black text-primary mb-6 md:mb-10 tracking-tighter">
                             {content.title}
                         </h2>
                         <div className="space-y-8 text-xl text-secondary/80 leading-relaxed font-serif italic">

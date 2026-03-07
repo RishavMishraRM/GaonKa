@@ -7,8 +7,9 @@ import { getSiteContent } from "@/lib/db";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "All Products - GaonKa",
-    description: "Browse our complete range of farm-fresh, preservative-free village products including cold-pressed oils, hand-pounded spices, and stone-ground flours.",
+    title: "100% Organic Products | Cold Pressed Oils & Stone Ground Atta - GaonKa",
+    description: "Browse GaonKa's complete range of farm-fresh, preservative-free village products. Shop 100% pure organic cold-pressed mustard oil, hand-pounded spices, and stone-ground chakki atta delivered to your door.",
+    keywords: ["buy organic products online", "cold pressed mustard oil", "stone ground chakki atta", "natural village food", "organic spices online", "preservative free food india"],
 };
 
 export default async function ProductsPage() {
@@ -18,6 +19,8 @@ export default async function ProductsPage() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "ItemList",
+        "name": "GaonKa Organic Products",
+        "description": "100% Organic, Preservative-Free Food Direct from Indian Villages.",
         "itemListElement": products.map((product: any, index: number) => ({
             "@type": "ListItem",
             "position": index + 1,
@@ -25,12 +28,17 @@ export default async function ProductsPage() {
                 "@type": "Product",
                 "name": product.name,
                 "description": product.desc,
-                "image": `https://gaonka.com${product.image}`,
+                "image": `https://gaonka.shop${product.image}`, // Updated Domain
+                "brand": {
+                    "@type": "Brand",
+                    "name": "GaonKa"
+                },
                 "offers": {
                     "@type": "Offer",
                     "price": product.price.replace(/[^0-9]/g, ''),
                     "priceCurrency": "INR",
-                    "availability": "https://schema.org/InStock"
+                    "availability": product.stockLeft > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+                    "url": `https://gaonka.shop/products`
                 }
             }
         }))

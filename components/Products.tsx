@@ -56,7 +56,7 @@ export default function Products({ products, sourceText }: { products: Product[]
                                 <div className={`relative aspect-[4/5] rounded-sharp overflow-hidden mb-8 ${product.color} bg-opacity-30 border border-primary/5`}>
                                     <Image
                                         src={product.image}
-                                        alt={product.name}
+                                        alt={`${product.name} - 100% Organic, Preservative-Free`}
                                         fill
                                         className="object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-1000 p-8"
                                         sizes="(max-width: 768px) 100vw, 33vw"

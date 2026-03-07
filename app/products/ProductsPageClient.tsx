@@ -143,7 +143,7 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                                             <div className="relative aspect-[3/4] overflow-hidden bg-[#F5F4F2] mb-8 cursor-pointer group-hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-shadow duration-700">
                                                 <Image
                                                     src={product.image}
-                                                    alt={product.name}
+                                                    alt={`${product.name} - Buy 100% Organic, Preservative-Free Online`}
                                                     fill
                                                     className="object-contain p-12 mix-blend-multiply transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
                                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

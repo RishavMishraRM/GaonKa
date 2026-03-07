@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin-gaonka-9fX72K
-Disallow: /api/auth
-
-Sitemap: https://gaonka.com/sitemap.xml

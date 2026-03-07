@@ -119,8 +119,8 @@ export default async function Press() {
                             Contact for Media
                         </h2>
                         <div className="text-gray-700 font-mono text-sm space-y-2 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm">
-                            <p>Email: {content.contact?.email || "hello@gaonka.in"}</p>
-                            <p>WhatsApp: {content.contact?.phone || "+91 98765 43210"}</p>
+                            <p>Email: {content.contact?.email || "hello@gaonka.shop"}</p>
+                            <p>WhatsApp: {content.contact?.phone || "+91 8507886461"}</p>
                         </div>
                     </div>
 

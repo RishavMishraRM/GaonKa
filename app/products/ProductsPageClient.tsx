@@ -22,7 +22,7 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
 
     const handleOrder = (productName: string) => {
         const text = encodeURIComponent(`Namaste GaonKa, I wish to acquire ${productName}.`);
-        window.open(`https://wa.me/918507886461?text=${text}`, "_blank");
+        window.open(`https://wa.me/919296886461?text=${text}`, "_blank");
     };
 
     return (

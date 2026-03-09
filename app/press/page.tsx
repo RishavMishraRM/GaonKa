@@ -134,7 +134,7 @@ export default async function Press() {
                         </h2>
                         <div className="text-gray-700 font-mono text-sm space-y-2 bg-stone-50 p-6 rounded-2xl border border-stone-100 shadow-sm">
                             <p>Email: {content.contact?.email || "hello@gaonka.shop"}</p>
-                            <p>WhatsApp: {content.contact?.phone || "+91 8507886461"}</p>
+                            <p>WhatsApp: {content.contact?.phone || "+91 9296886461"}</p>
                         </div>
                     </div>
 

@@ -100,7 +100,7 @@ export default function RootLayout({
                 "knowsAbout": ["Cold Pressed Mustard Oil", "Stone Ground Chakki Atta", "Organic Farming", "Village Economies", "Preservative Free Food", "Desi Ghee"],
                 "contactPoint": {
                   "@type": "ContactPoint",
-                  "telephone": "+918507886461",
+                  "telephone": "+919296886461",
                   "contactType": "customer service",
                   "availableLanguage": ["English", "Hindi"]
                 },
@@ -114,7 +114,7 @@ export default function RootLayout({
                 "name": "GaonKa - Organic Farm Food Delivery",
                 "description": "Farm-to-home organic food delivery from Indian villages. Cold-pressed oils, stone-ground atta, pure ghee.",
                 "url": "https://gaonka.shop",
-                "telephone": "+918507886461",
+                "telephone": "+919296886461",
                 "priceRange": "$$",
                 "image": "https://gaonka.shop/images/Image1_Hero_Main.png",
                 "address": {

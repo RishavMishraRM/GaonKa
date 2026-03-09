@@ -26,7 +26,7 @@ export default function Products({ products, sourceText }: { products: Product[]
 
     const handleOrder = (productName: string) => {
         const text = encodeURIComponent(`Hi GaonKa, I would like to order ${productName}.`);
-        window.open(`https://wa.me/918507886461?text=${text}`, "_blank");
+        window.open(`https://wa.me/919296886461?text=${text}`, "_blank");
     };
 
     return (

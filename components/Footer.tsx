@@ -79,7 +79,7 @@ export default function Footer({ text }: { text: string }) {
                         <div className="space-y-3 pt-6 border-t border-white/5">
                             <p className="text-[10px] text-cta uppercase tracking-widest font-black">Direct Contact</p>
                             <p className="text-2xl font-serif">hello@gaonka.shop</p>
-                            <p className="opacity-50 text-sm font-sans tracking-widest">+91 8507886461</p>
+                            <p className="opacity-50 text-sm font-sans tracking-widest">+91 9296886461</p>
                         </div>
                     </div>
                 </div>

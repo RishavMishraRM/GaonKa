@@ -36,7 +36,7 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] max-w-7xl rounded-sharp px-6 py-3 ${isScrolled ? "liquid-glass shadow-lg" : "bg-white/10 backdrop-blur-sm"
+            className={`fixed top-4 inset-x-0 mx-auto z-50 transition-all duration-500 w-[95%] max-w-7xl rounded-sharp px-6 py-3 ${isScrolled ? "liquid-glass shadow-lg" : "bg-white/10 backdrop-blur-sm"
                 }`}
         >
             <div className="flex justify-between items-center">

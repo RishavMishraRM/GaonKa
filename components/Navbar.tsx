@@ -35,50 +35,52 @@ export default function Navbar() {
     };
 
     return (
-        <nav
-            className={`fixed top-4 inset-x-0 mx-auto z-50 transition-all duration-500 w-[95%] max-w-7xl rounded-sharp px-6 py-3 ${isScrolled ? "liquid-glass shadow-lg" : "bg-white/10 backdrop-blur-sm"
-                }`}
-        >
-            <div className="flex justify-between items-center">
-                {/* Logo */}
-                <Link href="/" className="text-3xl font-serif font-bold tracking-tighter text-primary z-50 relative">
-                    GaonKa
-                </Link>
-
-                {/* Desktop Links */}
-                <div className="hidden md:flex items-center space-x-10">
-                    <button onClick={() => scrollToSection("story")} className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
-                        Our Story
-                    </button>
-                    <button onClick={() => scrollToSection("process")} className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
-                        Process
-                    </button>
-                    <button onClick={() => scrollToSection("farmers")} className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
-                        Farmers
-                    </button>
-                    <Link href="/products" className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
-                        Products
+        <>
+            <nav
+                className={`fixed top-4 inset-x-0 mx-auto z-50 transition-all duration-500 w-[95%] max-w-7xl rounded-sharp px-6 py-3 ${isScrolled ? "liquid-glass shadow-lg" : "bg-white/10 backdrop-blur-sm"
+                    }`}
+            >
+                <div className="flex justify-between items-center">
+                    {/* Logo */}
+                    <Link href="/" className="text-3xl font-serif font-bold tracking-tighter text-primary z-50 relative">
+                        GaonKa
                     </Link>
+
+                    {/* Desktop Links */}
+                    <div className="hidden md:flex items-center space-x-10">
+                        <button onClick={() => scrollToSection("story")} className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
+                            Our Story
+                        </button>
+                        <button onClick={() => scrollToSection("process")} className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
+                            Process
+                        </button>
+                        <button onClick={() => scrollToSection("farmers")} className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
+                            Farmers
+                        </button>
+                        <Link href="/products" className="text-secondary font-medium tracking-wide hover:text-primary transition-colors cursor-pointer">
+                            Products
+                        </Link>
+                        <button
+                            onClick={() => scrollToSection("products")}
+                            className="flex items-center gap-2 bg-cta text-white px-6 py-2.5 rounded-sharp hover:bg-primary transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+                        >
+                            <ShoppingBag size={18} />
+                            <span className="font-semibold uppercase tracking-wider text-xs">Order Now</span>
+                        </button>
+                    </div>
+
+                    {/* Mobile Menu Button - Z-index high to overlap overlay */}
                     <button
-                        onClick={() => scrollToSection("products")}
-                        className="flex items-center gap-2 bg-cta text-white px-6 py-2.5 rounded-sharp hover:bg-primary transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+                        className="md:hidden text-primary z-50 relative p-2"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle Menu"
                     >
-                        <ShoppingBag size={18} />
-                        <span className="font-semibold uppercase tracking-wider text-xs">Order Now</span>
+                        {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
                     </button>
                 </div>
+            </nav>
 
-                {/* Mobile Menu Button - Z-index high to overlap overlay */}
-                <button
-                    className="md:hidden text-primary z-50 relative p-2"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle Menu"
-                >
-                    {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
-                </button>
-            </div>
-
-            {/* Mobile Menu Overlay - Full Screen */}
+            {/* Mobile Menu Overlay - Moved OUTSIDE the nav to avoid backdrop-blur clipping */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
@@ -128,6 +130,6 @@ export default function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

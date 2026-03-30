@@ -36,3 +36,6 @@ The entire application was built with a "Mobile-First" strategy, meaning we star
 *   **Default**: < 768px (Mobile)
 *   **`md:`**: >= 768px (Tablet/Small Laptop)
 *   **`lg:`**: >= 1024px (Desktop)
+
+
+

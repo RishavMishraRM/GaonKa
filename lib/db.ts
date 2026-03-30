@@ -1,9 +1,12 @@
 import fs from 'fs/promises';
 import path from 'path';
+import clientPromise from './mongodb';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const CONTENT_FILE = path.join(DATA_DIR, 'content.json');
 const PRODUCTS_JSON_FILE = path.join(DATA_DIR, 'products.json');
+
+const DB_NAME = 'gaonka';
 
 export interface SiteContent {
     hero: {
@@ -75,6 +78,20 @@ export interface Product {
 }
 
 export async function getSiteContent(): Promise<SiteContent> {
+    if (process.env.MONGODB_URI) {
+        try {
+            const client = await clientPromise;
+            const db = client.db(DB_NAME);
+            const settings = await db.collection('settings').findOne({ type: 'site_content' });
+            if (settings && settings.data) {
+                return settings.data as SiteContent;
+            }
+        } catch (error) {
+            console.error("MongoDB getSiteContent Error:", error);
+        }
+    }
+
+    // Fallback to File
     try {
         const data = await fs.readFile(CONTENT_FILE, 'utf-8');
         return JSON.parse(data);
@@ -84,10 +101,55 @@ export async function getSiteContent(): Promise<SiteContent> {
 }
 
 export async function saveSiteContent(content: SiteContent) {
-    await fs.writeFile(CONTENT_FILE, JSON.stringify(content, null, 2));
+    if (process.env.MONGODB_URI) {
+        try {
+            const client = await clientPromise;
+            const db = client.db(DB_NAME);
+            await db.collection('settings').updateOne(
+                { type: 'site_content' },
+                { $set: { type: 'site_content', data: content } },
+                { upsert: true }
+            );
+            return;
+        } catch (error) {
+            console.error("MongoDB saveSiteContent Error:", error);
+        }
+    }
+    
+    // Always fall back or duplicate to file if local for safety
+    if (process.env.NODE_ENV === 'development') {
+        await fs.writeFile(CONTENT_FILE, JSON.stringify(content, null, 2));
+    }
 }
 
 export async function getProducts(): Promise<Product[]> {
+    if (process.env.MONGODB_URI) {
+        try {
+            const client = await clientPromise;
+            const db = client.db(DB_NAME);
+            const products = await db.collection('products').find({}).toArray();
+            return products.map(p => ({
+                id: p.id || p._id.toString(),
+                name: p.name,
+                category: p.category,
+                filterCategory: p.filterCategory,
+                price: p.price,
+                qty: p.qty,
+                desc: p.desc,
+                batch: p.batch,
+                processing: p.processing,
+                color: p.color,
+                image: p.image,
+                enabled: p.enabled,
+                stockLeft: p.stockLeft,
+                harvestStatus: p.harvestStatus
+            })) as Product[];
+        } catch (error) {
+            console.error("MongoDB getProducts Error:", error);
+        }
+    }
+
+    // Fallback to File
     try {
         const data = await fs.readFile(PRODUCTS_JSON_FILE, 'utf-8');
         return JSON.parse(data);
@@ -97,7 +159,26 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export async function saveProducts(products: Product[]) {
-    await fs.writeFile(PRODUCTS_JSON_FILE, JSON.stringify(products, null, 2));
+    if (process.env.MONGODB_URI) {
+        try {
+            const client = await clientPromise;
+            const db = client.db(DB_NAME);
+            // In a small app like this, we replace the collection or update individually.
+            // For now, we clear and insertMany to keep it simple and consistent with JSON behavior.
+            await db.collection('products').deleteMany({});
+            if (products.length > 0) {
+                await db.collection('products').insertMany(products);
+            }
+            return;
+        } catch (error) {
+            console.error("MongoDB saveProducts Error:", error);
+        }
+    }
+
+    // Always fall back or duplicate to file if local for safety
+    if (process.env.NODE_ENV === 'development') {
+        await fs.writeFile(PRODUCTS_JSON_FILE, JSON.stringify(products, null, 2));
+    }
 }
 
 const defaultContent = {

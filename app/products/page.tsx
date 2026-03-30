@@ -46,9 +46,9 @@ export default async function ProductsPage() {
                 },
                 "offers": {
                     "@type": "Offer",
-                    "price": product.price.replace(/[^0-9]/g, ''),
+                    "price": (product.price || "").replace(/[^0-9]/g, ''),
                     "priceCurrency": "INR",
-                    "availability": product.stockLeft > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+                    "availability": (product.stockLeft || 0) > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
                     "url": `https://gaonka.shop/products`
                 }
             }

@@ -4,9 +4,22 @@ import { useState } from "react";
 import { updatePressAction, updateContactAction } from "../cms-actions";
 import { Trash, Plus, Save } from "lucide-react";
 
-export default function PressEditor({ initialPress, initialContact }: { initialPress: any[], initialContact: any }) {
-    const [press, setPress] = useState(initialPress);
-    const [contact, setContact] = useState({
+interface PressItem {
+    id: string;
+    title: string;
+    source: string;
+    date: string;
+    link: string;
+}
+
+interface ContactInfo {
+    email: string;
+    phone: string;
+}
+
+export default function PressEditor({ initialPress, initialContact }: { initialPress: PressItem[], initialContact: ContactInfo }) {
+    const [press, setPress] = useState<PressItem[]>(initialPress);
+    const [contact, setContact] = useState<ContactInfo>({
         email: initialContact?.email || "",
         phone: initialContact?.phone || ""
     });

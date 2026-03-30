@@ -7,17 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-interface Product {
-    id: string;
-    name: string;
-    category: string;
-    price: string;
-    qty: string;
-    desc: string;
-    enabled: boolean;
-    stockLeft?: number;
-    image: string;
-}
+import { Product } from "@/lib/db";
 
 export default function ProductsPageClient({ initialProducts }: { initialProducts: Product[] }) {
     const [activeFilter, setActiveFilter] = useState("All");

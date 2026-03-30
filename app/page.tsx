@@ -24,7 +24,7 @@ export default async function Home() {
     "@type": "ItemList",
     "name": "GaonKa Organic Products",
     "description": "100% Organic, Preservative-Free Food Direct from Indian Villages.",
-    "itemListElement": productsList.filter((p: any) => p.enabled !== false).slice(0, 3).map((product: any, index: number) => ({
+    "itemListElement": productsList.filter((p) => p.enabled !== false).slice(0, 3).map((product, index: number) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
@@ -37,7 +37,7 @@ export default async function Home() {
           "@type": "Offer",
           "price": product.price.replace(/[^0-9]/g, ''),
           "priceCurrency": "INR",
-          "availability": product.stockLeft && product.stockLeft > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+          "availability": (product.stockLeft || 0) > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
           "url": "https://gaonka.shop/products"
         }
       }

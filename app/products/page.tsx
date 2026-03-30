@@ -32,7 +32,7 @@ export default async function ProductsPage() {
         "@type": "ItemList",
         "name": "GaonKa Organic Products",
         "description": "100% Organic, Preservative-Free Food Direct from Indian Villages.",
-        "itemListElement": products.map((product: any, index: number) => ({
+        "itemListElement": products.map((product, index: number) => ({
             "@type": "ListItem",
             "position": index + 1,
             "item": {

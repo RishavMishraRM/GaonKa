@@ -26,7 +26,7 @@ export default function GaonKaCircle() {
 
                         <div className="text-left md:text-right max-w-sm">
                             <p className="text-sm md:text-base text-white/60 font-serif italic leading-relaxed">
-                                "Secure your harvest before it's even processed. Authenticity for the few."
+                                &quot;Secure your harvest before it&apos;s even processed. Authenticity for the few.&quot;
                             </p>
                         </div>
                     </div>

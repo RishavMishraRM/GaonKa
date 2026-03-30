@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     // Prepare response, will be overridden for admin redirection if needed
-    let response = NextResponse.next();
+    const response = NextResponse.next();
 
     // Protect all admin routes
     if (pathname.startsWith(ADMIN_ROUTE)) {

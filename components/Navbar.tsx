@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag } from "lucide-react";
 
@@ -10,7 +10,6 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
-    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,7 +21,8 @@ export default function Navbar() {
 
     const scrollToSection = (id: string) => {
         if (pathname !== "/") {
-            router.push(`/#${id}`);
+            // Force navigate to home with hash
+            window.location.href = `/#${id}`;
             setIsMobileMenuOpen(false);
             return;
         }

@@ -1,13 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, ArrowLeft, Star, Leaf } from "lucide-react";
+import { ShoppingBag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-export default function ProductsPageClient({ initialProducts }: { initialProducts: any[] }) {
+interface Product {
+    id: string;
+    name: string;
+    category: string;
+    price: string;
+    qty: string;
+    desc: string;
+    enabled: boolean;
+    stockLeft?: number;
+    image: string;
+}
+
+export default function ProductsPageClient({ initialProducts }: { initialProducts: Product[] }) {
     const [activeFilter, setActiveFilter] = useState("All");
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     // Only show products that are enabled
     const activeProducts = initialProducts.filter(p => p.enabled !== false);
@@ -21,7 +39,7 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
         : activeProducts.filter(p => p.category === activeFilter);
 
     const handleOrder = (productName: string) => {
-        const text = encodeURIComponent(`Namaste GaonKa, I wish to acquire ${productName}.`);
+        const text = encodeURIComponent(`Namaste GaonKa, I wish to Buy ${productName}.`);
         window.open(`https://wa.me/919296886461?text=${text}`, "_blank");
     };
 
@@ -133,14 +151,12 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                                         <motion.div
                                             layout
                                             key={product.id}
-                                            initial={{ opacity: 0, y: 40 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true, margin: "-50px" }}
-                                            transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={isMounted ? { opacity: 1, y: 0 } : {}}
+                                            transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
                                             className="group flex flex-col"
                                         >
-                                            {/* Image Stage */}
-                                            <div className="relative aspect-[3/4] overflow-hidden bg-[#F5F4F2] mb-8 cursor-pointer group-hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-shadow duration-700">
+                                            <div className="relative aspect-[3/4] overflow-hidden bg-[#F5F4F2] mb-8 group-hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-shadow duration-700">
                                                 <Image
                                                     src={product.image}
                                                     alt={`${product.name} - Buy 100% Organic, Preservative-Free Online`}
@@ -150,12 +166,16 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                                                 />
 
                                                 {/* Interaction Overlay - Always Visible */}
-                                                <div className="absolute inset-x-4 bottom-4">
+                                                <div className="absolute inset-x-4 bottom-4 z-20">
                                                     <button
-                                                        onClick={() => handleOrder(product.name)}
-                                                        className="w-full bg-primary/95 backdrop-blur text-white py-4 text-[10px] font-black uppercase tracking-[0.25em] flex items-center justify-center gap-3 hover:bg-cta transition-colors"
+                                                        type="button"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            handleOrder(product.name);
+                                                        }}
+                                                        className="w-full bg-primary/95 backdrop-blur text-white py-4 text-[10px] font-black uppercase tracking-[0.25em] flex items-center justify-center gap-3 hover:bg-cta transition-colors cursor-pointer"
                                                     >
-                                                        <span>Acquire Now</span>
+                                                        <span>Buy Now</span>
                                                         <ShoppingBag size={12} />
                                                     </button>
                                                 </div>

@@ -197,6 +197,27 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                                                     {product.desc}
                                                 </div>
 
+                                                {/* Dynamic Attributes display */}
+                                                {(() => {
+                                                    const attrs = [
+                                                        ...(product.attributes || []),
+                                                        product.harvestStatus ? { name: "Status", value: product.harvestStatus } : null,
+                                                        product.batch ? { name: "Batch", value: product.batch } : null
+                                                    ].filter(Boolean);
+                                                    
+                                                    if (attrs.length === 0) return null;
+                                                    
+                                                    return (
+                                                        <div className="flex flex-wrap items-center justify-center gap-2 pt-2 pb-1 max-w-xs">
+                                                            {attrs.slice(0, 3).map((attr: any, i: number) => (
+                                                                <span key={i} className="text-[9px] bg-primary/5 text-primary tracking-widest uppercase font-black px-2 py-1 rounded">
+                                                                    <span className="opacity-50">{attr.name}:</span> {attr.value}
+                                                                </span>
+                                                            ))}
+                                                        </div>
+                                                    );
+                                                })()}
+
                                                 <div className="flex items-baseline gap-2 pt-2">
                                                     <span className="text-sm font-black text-primary/30 uppercase tracking-widest">{product.qty}</span>
                                                     <span className="text-2xl font-serif font-black text-cta italic">{product.price}</span>

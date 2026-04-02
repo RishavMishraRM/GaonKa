@@ -79,6 +79,9 @@ export async function toggleSectionAction(sectionKey: string) {
 }
 
 export async function updateProductAction(productId: string, data: any) {
+    if (typeof data.attributes === 'string') {
+        try { data.attributes = JSON.parse(data.attributes); } catch(e) {}
+    }
     const products = await getProducts();
     const index = products.findIndex((p: any) => p.id === productId);
     if (index !== -1) {
@@ -101,6 +104,9 @@ export async function deleteProductAction(productId: string) {
 }
 
 export async function addProductAction(product: any) {
+    if (typeof product.attributes === 'string') {
+        try { product.attributes = JSON.parse(product.attributes); } catch(e) {}
+    }
     const products = await getProducts();
     products.push({ ...product, id: Date.now().toString(), enabled: true });
     await saveProducts(products);

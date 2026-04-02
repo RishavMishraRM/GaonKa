@@ -7,13 +7,27 @@
     "price": "₹180",
     "qty": "1 Litre",
     "desc": "Traditional kachi ghani mustard oil. Pungent and pure.",
-    "batch": "Batch: Sep 2026",
-    "processing": "Pressed: 5 days ago",
+    "batch": "",
+    "processing": "",
     "color": "bg-yellow-100",
     "image": "/images/Image12_Product.png",
     "enabled": true,
-    "stockLeft": 0,
-    "harvestStatus": "Just Harvested"
+    "stockLeft": 3,
+    "harvestStatus": "",
+    "attributes": [
+      {
+        "name": "Harvest Status",
+        "value": "Just Harvested"
+      },
+      {
+        "name": "Batch Code",
+        "value": "Batch: Sep 2026"
+      },
+      {
+        "name": "Processing Cycle",
+        "value": "Pressed: 5 days ago"
+      }
+    ]
   },
   {
     "id": "groundnut-oil",
@@ -23,11 +37,27 @@
     "price": "₹240",
     "qty": "1 Litre",
     "desc": "Slow-pressed groundnuts from Siwan fields. Nutty aroma.",
-    "batch": "Batch: Sep 2026",
-    "processing": "Pressed: 3 days ago",
+    "batch": "",
+    "processing": "",
     "color": "bg-orange-50",
     "image": "/images/Image12_Product.png",
-    "enabled": true
+    "enabled": true,
+    "stockLeft": 996,
+    "harvestStatus": "",
+    "attributes": [
+      {
+        "name": "Batch Code",
+        "value": "Batch: Sep 2026"
+      },
+      {
+        "name": "Processing Cycle",
+        "value": "Pressed: 3 days ago"
+      },
+      {
+        "name": "New Pressed",
+        "value": "Fresh"
+      }
+    ]
   },
   {
     "id": "sesame-oil",

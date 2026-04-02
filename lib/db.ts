@@ -75,6 +75,7 @@ export interface Product {
     enabled: boolean;
     stockLeft?: number;
     harvestStatus?: string;
+    attributes?: { name: string; value: string }[];
 }
 
 export async function getSiteContent(): Promise<SiteContent> {
@@ -142,7 +143,8 @@ export async function getProducts(): Promise<Product[]> {
                 image: p.image,
                 enabled: p.enabled,
                 stockLeft: p.stockLeft,
-                harvestStatus: p.harvestStatus
+                harvestStatus: p.harvestStatus,
+                attributes: p.attributes || []
             })) as Product[];
         } catch (error) {
             console.error("MongoDB getProducts Error:", error);

@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface HeroContent {
     title: string;
@@ -69,6 +70,23 @@ export default function Hero({ content }: { content: HeroContent }) {
                     <p className="text-base md:text-2xl text-primary/80 max-w-2xl mx-auto leading-relaxed font-serif italic">
                         {content.quote}
                     </p>
+
+                    <motion.div 
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={isRevealed ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                        className="mt-10 md:mt-16 inline-flex items-center gap-4 bg-cta/10 backdrop-blur-sm border border-cta/20 px-8 py-4 md:px-12 md:py-6 rounded-full cursor-pointer group hover:bg-cta hover:text-white transition-all duration-500 shadow-2xl shadow-cta/10 hover:border-cta"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            window.open("https://wa.me/919296886461?text=Namaste GaonKa, I'd like to join the Waiting List.", "_blank");
+                        }}
+                    >
+                        <div className="w-2 h-2 rounded-full bg-cta group-hover:bg-white animate-pulse" />
+                        <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Join Internal WaitingList</span>
+                        <ArrowRight size={14} className="opacity-40 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500" />
+                    </motion.div>
                 </motion.div>
 
                 {/* Interaction Prompt (Only visible if NOT revealed) */}

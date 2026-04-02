@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, ArrowLeft } from "lucide-react";
+import { ShoppingBag, ArrowLeft, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 import { Product } from "@/lib/db";
@@ -28,8 +28,11 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
         ? activeProducts
         : activeProducts.filter(p => p.category === activeFilter);
 
-    const handleOrder = (productName: string) => {
-        const text = encodeURIComponent(`Namaste GaonKa, I wish to Buy ${productName}.`);
+    const handleOrder = (productName: string, isOutOfStock: boolean = false) => {
+        const message = isOutOfStock 
+            ? `Namaste GaonKa, I am interested in ${productName}. Please let me know when it is back in stock.`
+            : `Namaste GaonKa, I wish to Buy ${productName}.`;
+        const text = encodeURIComponent(message);
         window.open(`https://wa.me/919296886461?text=${text}`, "_blank");
     };
 
@@ -135,7 +138,8 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                         >
                             <AnimatePresence mode="popLayout">
                                 {filteredProducts.map((product, idx) => {
-                                    const isHighDemand = (product.stockLeft || 0) < 10;
+                                    const isOutOfStock = product.stockLeft === 0;
+                                    const isHighDemand = product.stockLeft !== undefined && product.stockLeft > 0 && product.stockLeft < 10;
 
                                     return (
                                         <motion.div
@@ -161,12 +165,16 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                                                         type="button"
                                                         onClick={(e) => {
                                                             e.stopPropagation();
-                                                            handleOrder(product.name);
+                                                            handleOrder(product.name, isOutOfStock);
                                                         }}
-                                                        className="w-full bg-primary/95 backdrop-blur text-white py-4 text-[10px] font-black uppercase tracking-[0.25em] flex items-center justify-center gap-3 hover:bg-cta transition-colors cursor-pointer"
+                                                        className={`w-full backdrop-blur text-white py-4 text-[10px] font-black uppercase tracking-[0.25em] flex items-center justify-center gap-3 transition-colors cursor-pointer ${
+                                                            isOutOfStock 
+                                                                ? "bg-secondary/80 hover:bg-secondary" 
+                                                                : "bg-primary/95 hover:bg-cta"
+                                                        }`}
                                                     >
-                                                        <span>Buy Now</span>
-                                                        <ShoppingBag size={12} />
+                                                        <span>{isOutOfStock ? "Show Interest" : "Buy Now"}</span>
+                                                        {isOutOfStock ? <MessageCircle size={12} /> : <ShoppingBag size={12} />}
                                                     </button>
                                                 </div>
 
@@ -176,13 +184,19 @@ export default function ProductsPageClient({ initialProducts }: { initialProduct
                                                         {product.category}
                                                     </span>
                                                 </div>
-                                                {isHighDemand && (
+                                                {isOutOfStock ? (
+                                                    <div className="absolute top-4 right-4">
+                                                        <span className="bg-secondary/40 backdrop-blur text-white px-3 py-1 text-[9px] font-black uppercase tracking-widest">
+                                                            Restocking
+                                                        </span>
+                                                    </div>
+                                                ) : isHighDemand ? (
                                                     <div className="absolute top-4 right-4 animate-pulse">
                                                         <span className="bg-cta text-white px-3 py-1 text-[9px] font-black uppercase tracking-widest">
                                                             Rare
                                                         </span>
                                                     </div>
-                                                )}
+                                                ) : null}
                                             </div>
 
                                             {/* Editorial Content */}

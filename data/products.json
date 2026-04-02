@@ -71,7 +71,8 @@
     "processing": "Pressed: Weekly",
     "color": "bg-stone-200",
     "image": "/images/Image12_Product.png",
-    "enabled": true
+    "enabled": true,
+    "stockLeft": 0
   },
   {
     "id": "coconut-oil",

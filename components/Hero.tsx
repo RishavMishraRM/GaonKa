@@ -71,7 +71,7 @@ export default function Hero({ content }: { content: HeroContent }) {
                         {content.quote}
                     </p>
 
-                    <motion.div 
+                    <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -84,7 +84,7 @@ export default function Hero({ content }: { content: HeroContent }) {
                         }}
                     >
                         <div className="w-2 h-2 rounded-full bg-cta group-hover:bg-white animate-pulse" />
-                        <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Join Internal WaitingList</span>
+                        <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Join Our Waiting List</span>
                         <ArrowRight size={14} className="opacity-40 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500" />
                     </motion.div>
                 </motion.div>
